@@ -1,0 +1,58 @@
+!!! 5
+%html{:lang => I18n.locale}
+  %head
+    %meta(charset="utf-8")
+    %meta(content="IE=edge,chrome=1" http-equiv="X-UA-Compatible")
+    %title= data.page.title || "Mandadream"
+    %meta{:name => 'description', :content => data.page.description || "Luxury Villas in Lamu Island, Manda - Kenya"}
+    = stylesheet_link_tag 'site'
+    = javascript_include_tag 'site'
+    / [if lt IE 9]
+      = javascript_include_tag 'vendor/html5shiv'
+    / [if lt IE 8]
+      = javascript_include_tag 'vendor/IE8'
+    = yield_content :head
+  %body{:class => page_classes}
+    #map
+    %header
+      %hgroup
+        %h1.logo
+          = link_to image_tag('mandadream-logo.png', :alt => 'Mandadream'), (I18n.locale.to_s == 'en' ? '/' : "/it/")
+        %h2.tagline Luxury Villas - Lamu - Manda - Kenya
+      %nav(role="navigation")
+        = link_to I18n.t('menu.villas'), localized_path('villas'), :class => 'villas'
+        = link_to I18n.t('menu.activities'), localized_path('activities'), :class => 'activities'
+        = link_to I18n.t('menu.prices_and_bookings'), localized_path('prices-and-bookings'), :class => 'prices-and-bookings'
+        = link_to I18n.t('menu.contacts'), localized_path('contacts'), :class => 'contacts'
+      %aside
+        %nav
+          = link_to I18n.t('menu.photogallery'), localized_path('photogallery'), :class => 'photogallery'
+          %span= "&emsp;·&emsp;"
+          = link_to 'EN', (I18n.default_locale.to_s == 'en' ? '/' : "/en/"), :class => 'en'
+          = link_to 'IT', (I18n.default_locale.to_s == 'it' ? '/' : "/it/"), :class => 'it'
+    %span.toggle-panel
+      = image_tag 'circle-brown.png'
+      %i.icon &#x0024;
+    %span.slideshow.previous
+      = image_tag 'circle-brown.png'
+      %i.icon &#x002a;
+    %span.slideshow.next
+      = image_tag 'circle-brown.png'
+      %i.icon &#x0029;
+    .container(role="main" data-status="open")
+      .inner
+        = yield
+      .push
+    %footer(data-status="open")
+      %a.social-icon(href="https://www.facebook.com/pages/MandaDream/102303479905474" target="_blank")
+        = image_tag('circle-yellow.png')
+        %i.icon &#x0021;
+      %a.social-icon(href="http://www.flickr.com" target="_blank")
+        = image_tag('circle-yellow.png')
+        %i.icon &#x0039;
+      %nav
+        = link_to "Credits"
+        = link_to "Privacy"
+      .slideshow-controls
+        %a.icon.play &#x0028;
+        %nav

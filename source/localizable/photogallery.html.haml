@@ -1,0 +1,21 @@
+:coffeescript
+  $ -> window.load_photogallery()
+
+:css
+  .container[role="main"], .toggle-panel { display: none; }
+  .slideshow.previous { left: 20px; }
+
+.gallery(data-status="open")
+  %a.left.icon &#x0024;
+  %a.right.icon &#x003e;
+  .toggle
+    = image_tag 'circle-brown.png'
+    %i.icon &#x0025;
+  .thumbs
+  .controls
+    %a.play.icon &#x0028;
+    %span.status
+      %span.current 1
+      %span= "/"
+      %span.total
+    %span.caption

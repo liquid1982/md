@@ -1,0 +1,39 @@
+= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false'
+
+:css
+  .slideshow.previous, .slideshow.next { display: none; }
+
+:coffeescript
+  google.maps.event.addDomListener window, 'load', ->
+    window.map = new google.maps.Map document.getElementById('map'), {
+      zoom: 7,
+      center: new google.maps.LatLng(-2, 39),
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      panControl: true,
+      panControlOptions: {
+          position: google.maps.ControlPosition.RIGHT_CENTER
+      },
+      zoomControl: true,
+      zoomControlOptions: {
+          style: google.maps.ZoomControlStyle.LARGE,
+          position: google.maps.ControlPosition.RIGHT_CENTER
+      },
+      mapTypeControl: true,
+      mapTypeControlOptions: {
+          style: google.maps.MapTypeControlStyle.HORIZONTAL_BAR,
+          position: google.maps.ControlPosition.RIGHT_BOTTOM
+      }
+    }
+
+    marker = new google.maps.Marker {
+      position: new google.maps.LatLng(-2.295566, 40.923428),
+      map: map,
+      icon: '/images/marker.png',
+      animation: google.maps.Animation.DROP
+    }
+
+%h1.title-1= I18n.t('menu.contacts')
+%p
+  tel: 0049 352535 3525
+  %br
+  info@mandadream.com

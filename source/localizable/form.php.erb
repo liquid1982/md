@@ -1,0 +1,123 @@
+<?php
+  date_default_timezone_set('Europe/Rome');
+  session_start();
+
+  require("{$_SERVER['DOCUMENT_ROOT']}/lib/class.phpmailer.php");
+  require("{$_SERVER['DOCUMENT_ROOT']}/lib/formvalidator.php");
+
+  $debug = true;
+
+  function check_fields() {
+    $errors = array();
+
+    $validator = new FormValidator();
+    $validator->addValidation("first_name","req", "");
+    $validator->addValidation("last_name","req", "");
+    $validator->addValidation("email", "req", "");
+    $validator->addValidation("email", "email", "");
+    $validator->addValidation("phone", "req", "");
+    $validator->addValidation("arrival_date", "req", "");
+    $validator->addValidation("nights", "req", "");
+    $validator->addValidation("people", "req", "");
+    $validator->addValidation("from_country", "req", "");
+
+    if (!$validator->ValidateForm()) {
+      foreach($validator->GetErrors() as $input_name => $input_error) {
+        array_push($errors, $input_name);
+      }
+    }
+
+    return $errors;
+  }
+
+  $use_smtp  = false;
+  $smtp_host = "smtp.example.com";
+  $smtp_port = 25;
+
+  if ($debug) {
+    $smtp_host = "smtp.cayenne.it";
+    # Richiesta di test
+    /*$_REQUEST = array(
+      'first_name'   => 'Vincenzo',
+      'last_name'    => 'Acinapura',
+      'email'        => 'vin.aci@gmail.com',
+      'phone'        => '3343256119',
+      'arrival_date' => '3 luglio 2012',
+      'nights'       => '6',
+      'people'       => '2',
+      'from_country' => 'Italia',
+      'notes'        => 'Arriviamo alle 23:00',
+      'newsletter'   => '1'
+    );*/
+  }
+
+  $errors = check_fields();
+
+  if (count($errors) > 0) {
+    $_SESSION['fields_with_errors'] = json_encode($errors);
+    die(header('Location: form-booking-warning.php'));
+  }
+
+  $labels = array(
+    'first_name'   => "<%= I18n.t('booking-form.labels.first_name') %>",
+    'last_name'    => "<%= I18n.t('booking-form.labels.last_name') %>",
+    'email'        => "<%= I18n.t('booking-form.labels.email') %>",
+    'phone'        => "<%= I18n.t('booking-form.labels.phone') %>",
+    'arrival_date' => "<%= I18n.t('booking-form.labels.arrival_date') %>",
+    'nights'       => "<%= I18n.t('booking-form.labels.nights') %>",
+    'people'       => "<%= I18n.t('booking-form.labels.people') %>",
+    'from_country' => "<%= I18n.t('booking-form.labels.from_country') %>",
+    'notes'        => "<%= I18n.t('booking-form.labels.notes') %>",
+    'newsletter'   => "<%= I18n.t('booking-form.labels.newsletter') %>",
+  );
+
+  $provided_fields = array();
+
+  foreach ($_REQUEST as $key => $value) {
+    if ($value) { array_push($provided_fields, "<li><b>{$labels[$key]}</b>: {$value}</li>"); }
+  }
+
+  $details = "<ul>" . join('', $provided_fields) . "</ul>";
+
+  $booking_mail = new PHPMailer();
+
+  if ($use_smtp) {
+    $booking_mail->IsSMTP();
+    $booking_mail->Host = $smtp_host;
+    $booking_mail->Port = $smtp_port;
+  }
+
+  $booking_mail->AddAddress(($debug) ? "vin.aci@gmail.com" : "info@mandadream.com");
+  $booking_mail->SetFrom("{$_REQUEST['first_name']} {$_REQUEST['last_name']}", $_REQUEST['email']);
+  $booking_mail->IsHTML(true);
+  $booking_mail->Subject = "<%= I18n.t('booking-form.mail.new-booking-subject') %>";
+  $booking_mail->Body    = <<<HTML
+    <%= I18n.t('booking-form.mail.new-booking-top') %>
+    {$details}
+    <%= I18n.t('booking-form.mail.new-booking-bottom') %>
+HTML;
+
+  $thankyou_mail = new PHPMailer();
+
+  if ($use_smtp) {
+    $thankyou_mail->IsSMTP();
+    $thankyou_mail->Host = $smtp_host;
+    $thankyou_mail->Port = $smtp_port;
+  }
+
+  $thankyou_mail->AddAddress($_REQUEST['email']);
+  $thankyou_mail->SetFrom("Mandadream", "info@mandadream.com");
+  $thankyou_mail->IsHTML(true);
+  $thankyou_mail->Subject = "<%= I18n.t('booking-form.mail.thankyou-subject') %>";
+  $thankyou_mail->Body    = <<<HTML
+    <%= I18n.t('booking-form.mail.thankyou-top') %>
+    {$details}
+    <%= I18n.t('booking-form.mail.thankyou-bottom') %>
+HTML;
+
+  if ($booking_mail->Send()) {
+    $thankyou_mail->Send();
+    header('Location: form-booking-success.html');
+  } else {
+    header('Location: form-booking-warning.php');
+  }

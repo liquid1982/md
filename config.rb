@@ -23,13 +23,13 @@ require 'coffee-filter'
 #
 # With no layout
 page "form.php", :layout => false
-page "en/form.php", :layout => false
+page "it/form.php", :layout => false
 
 page "form-booking-success.html", :layout => false
-page "en/form-booking-success.html", :layout => false
+page "it/form-booking-success.html", :layout => false
 
 page "form-booking-warning.php", :layout => false
-page "en/form-booking-warning.php", :layout => false
+page "it/form-booking-warning.php", :layout => false
 #
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout

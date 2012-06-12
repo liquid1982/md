@@ -2,6 +2,8 @@
 it:
   strings:
     about-manda: Dicono di Manda
+    prices: Prezzi
+    bookings: Prenotazioni
   paths:
     villas: ville
     activities: attivita
@@ -15,7 +17,7 @@ it:
     contacts: Contatti
     photogallery: Photogallery
   contents:
-    home:
+    home: >
       L’arcipelago di Lamu è avvolto da un’affascinante atmosfera medievale, che sembra non aver
       mutato di molto l’aspetto ed il carattere nel corso dei secoli. Formato da alcune isole
       maggiori e un’infinità di isolotti più piccoli, questo arcipelago è il gioiello della costa
@@ -24,16 +26,16 @@ it:
 
 
       Qui la vita scorre ad un ritmo lento e rilassato; l’incantevole paesaggio è caratterizzato da
-      dune di sabbia, lunghe spiagge bianche e piccoli villaggi nascosti. L’antica città di Lamu,
-      dichiarata dall’Unesco “Patrimonio dell’Umanita’” è un raro frammento vivente della cultura
-      Swahili, che un tempo dominava tutta la costa affacciata sull’Oceano Indiano.
+      dune di sabbia, lunghe spiagge bianche e piccoli villaggi nascosti.
 
 
+      L’antica città di Lamu, dichiarata dall’Unesco “Patrimonio dell’Umanita’” è un raro frammento
+      vivente della cultura Swahili, che un tempo dominava tutta la costa affacciata sull’Oceano Indiano.
       Con le sue stradine tortuose, che permettono il passaggio solo a pedoni e asini, i
       caratteristici intagli in legno e l’architettura tipica delle sue case, è un luogo
       assolutamente ricco di fascino.
 
-    villas:
+    villas: >
       Situate sulla splendida spiaggia dell’isola di Manda, a pochi metri dal mare, e circondate da
       una lussureggiante vegetazione tropicale, le ville Equator e Blue Empire godono di una
       spettacolare vista sull’Oceano Indiano, l’isola di Lamu e l’affascinante villaggio di Shela.
@@ -64,7 +66,7 @@ it:
       sull’Oceano Indiano, Equator e Blue Empire sono il luogo ideale per l’organizzazione di
       matrimoni, lune di miele, e altri eventi.
 
-    activities:
+    activities: >
       Tra le isole dell’arcipelago, il principale mezzo di trasporto è il tradizionale dhow, e le
       escursioni in dhow sono un’esperienza da non perdere.
       È possibile organizzare gite di mezza giornata con picnic, o veleggiare nella baia e tra i
@@ -87,14 +89,42 @@ it:
       veranda, leggendo un libro sui nostri lettini in spiaggia, o concedendovi un massaggio nella
       vostra stanza.
 
-    prices-and-bookings:
+    prices-and-bookings: >
       Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
       tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
       quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
       consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
       cillum dolore eu fugiat nulla pariatur.
 
-    booking-success:
+    contacts: >
+      Per maggiori informazioni inviaci una mail:
+
+      <a href="mailto:mandadreamkenya@gmail.com">mandadreamkenya@gmail.com</a>
+
+
+      oppure contatta il nostro manager Caroline Kennedy:
+
+      +254 735671732
+
+      +254 713286749
+
+    privacy: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    credits: >
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+    booking-success: >
       <strong>Grazie</strong>
 
 
@@ -103,7 +133,7 @@ it:
 
       Riceverai una risposta non appena possibile.
 
-    booking-warning:
+    booking-warning: >
       <strong>Attenzione</strong>
 
 
@@ -112,9 +142,7 @@ it:
 
       Per favore controlla il form e riprova.
   booking-form:
-    intro-text:
-      Compila il modulo sottostante per effettuare una prenotazione. I campi contrassegnati da * sono obbligatori.
-
+    intro-text: Compila il modulo sottostante per effettuare una prenotazione.
     labels:
       first_name: Nome
       last_name: Cognome
@@ -136,7 +164,7 @@ it:
         <p>Mail automatica generata da <a href="http://www.mandadream.it">Mandadream</a>.
       thankyou-subject: "[ Mandadream ] Prenotazione effettuata con successo"
       thankyou-top:
-        <p>Gentile {$_REQUEST['booking']['first_name']} {$_REQUEST['booking']['last_name']}, desideriamo ringraziarti per avereffettuato una prenotazione su Mandadream.</p>
+        <p>Gentile {$_REQUEST['first_name']} {$_REQUEST['last_name']}, desideriamo ringraziarti per avereffettuato una prenotazione su Mandadream.</p>
         <p>Questi sono i dati da te inseriti:</p>
       thankyou-bottom:
         <p>Grazie ancora dallo Staff di <a href="http://www.mandadream.it">Mandadream</a>.

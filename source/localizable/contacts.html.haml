@@ -32,8 +32,5 @@
       animation: google.maps.Animation.DROP
     }
 
-%h1.title-1= I18n.t('menu.contacts')
-%p
-  tel: 0049 352535 3525
-  %br
-  info@mandadream.com
+%h1.title-1= I18n.t 'menu.contacts'
+= simple_format I18n.t 'contents.contacts'

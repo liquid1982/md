@@ -14,5 +14,6 @@ tmp
 .yardoc
 _yardoc
 doc/
+.DS_Store
 /build
 /.sass-cache

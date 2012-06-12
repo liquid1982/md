@@ -2,6 +2,8 @@ Encoding.default_external = 'UTF-8'
 
 require 'coffee-filter'
 
+set :relative_links, true
+
 ###
 # Compass
 ###
@@ -30,7 +32,10 @@ page "it/form-booking-success.html", :layout => false
 
 page "form-booking-warning.php", :layout => false
 page "it/form-booking-warning.php", :layout => false
-#
+
+page "slides.html", :layout => false
+page "it/slides.html", :layout => false
+
 # With alternative layout
 # page "/path/to/file.html", :layout => :otherlayout
 #
@@ -44,6 +49,12 @@ page "it/form-booking-warning.php", :layout => false
 #   @which_fake_page = "Rendering a fake page with a variable"
 # end
 
+# ['index', 'villas', 'activities', 'credits', 'privacy'].each do |page|
+#   page "#{page}.html", :proxy => "/localizable/standard.html" do
+#     @page = page
+#   end
+# end
+
 ###
 # Helpers
 ###
@@ -54,7 +65,7 @@ page "it/form-booking-warning.php", :layout => false
 # Methods defined in the helpers block are available in templates
 helpers do
   def localized_path(path, extension = 'html')
-    path = I18n.t("paths.#{path}")
+    path = I18n.t "paths.#{path}"
     "#{path}.#{extension}"
   end
 end
@@ -68,16 +79,16 @@ activate :i18n, :mount_at_root => :en
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
-  # activate :minify_css
+  activate :minify_css
 
   # Minify Javascript on build
-  # activate :minify_javascript
+  activate :minify_javascript
 
   # Enable cache buster
   # activate :cache_buster
 
   # Use relative URLs
-  # activate :relative_assets
+  activate :relative_assets
 
   # Compress PNGs after build
   # First: gem install middleman-smusher
@@ -85,5 +96,5 @@ configure :build do
   # activate :smusher
 
   # Or use a different image path
-  # set :http_path, "/Content/images/"
+  # set :http_prefix, "/preview"
 end

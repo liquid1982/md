@@ -1,0 +1,7 @@
+:coffeescript
+  $ -> window.setup_slideshow '#credits'
+
+%h1.title-1= I18n.t 'menu.credits'
+
+.scrollable
+  = simple_format I18n.t 'contents.credits'

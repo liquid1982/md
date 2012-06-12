@@ -10,14 +10,18 @@ en:
     prices-and-bookings: prices-and-bookings
     contacts: contacts
     photogallery: photogallery
+    privacy: privacy
+    credits: credits
   menu:
     villas: Villas
     activities: Activities
     prices_and_bookings: Prices and bookings
     contacts: Contacts
     photogallery: Photogallery
+    privacy: Privacy
+    credits: Credits
   contents:
-    home: >
+    index: >
       A fascinating medieval atmosphere envelops Lamu’s archipelago, which has not changed much in
       looks and character during the centuries. Made up of a chain of major islands and many smaller
       ones, this archipelago is the brightest jewel of the Kenya coast, and offers an unforgettable
@@ -106,22 +110,34 @@ en:
       +254 713286749
 
     privacy: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Pursuant to par. 13 of the Legislative Decree of 30 June 2003, no.196, and to its successive modifications and amendments, hereafter referred to as the Privacy Code, we as the Subject hereby inform you that the personal information either supplied by you or otherwise legitimately acquired in pursuance of our activities is handled in full accordance with that Privacy Code and with the obligations of confidentiality which characterise the operations of Mandadream.
+
+
+      The Information is gathered by remote means, then processed by computerised and manual means, exclusively for purposes connected to the furnishing of services requested by the User. Processing is carried out in conformity with privacy regulations currently in force, with particular although not exclusive reference to the Attachment to the Privacy Code B (Technical Code regarding minimal security measures).
+
+
+      Such Information is available within the Mandadream organisation only to employees who need to have access to it for reasons of responsibilities that follow from our contractual relationship with you. The complete and updated list of such employees who may be delegated for such activity is available to you from us. That information can be communicated to bodies, authorities, public institutions, banks and credit institutes, professionals, independent contractors, business partners, and third parties which are utilised by Mandadream to satisfy its contractual obligations, as well as to whoever may be a legitimate addressee of communications provided for by legal obligations or regulations. Such subjects, as Owners, Managers, or employees delegated to such processing, shall handle and process that Information, whatever the individual situation, exclusively for the above-mentioned processing purposes. Such Information shall in no way be divulged. Mandadream informs you that you may invoke the rights listed in par.7 of the Privacy Code, among which are, simply as an example, the right to request access, to cancel following violation of law, to update, to correct data, and to block processing for legitimate reasons. The Owner of such processing is Mandadream, which may be contacted at the following address: info@mandadream.com
+
+
+      The information systems and computer programs have been designed to reduce to a minimum the use of personal and identifying information not necessary to the above-mentioned processing purposes.
+
+
+      The communication of the Information is necessary to the provision of services, and failure to furnish such Information will entail Mandadream’s inability to provide such service.
+
+
+      Mandadream hereby notifies you that in order to completely furnish services such as subscription to its newsletter, processing aimed at replying to user’s questions, and transmittal of requested information, within the limitations and methodologies established by law and these present guidelines, pursuant to par. 24 of the Privacy Code, your consent is necessary.
 
     credits: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <b>This site was built under the supervision of
+      Ocho Durando</b>
 
-    booking-success:
+      The Ocho Durando Graphic and Multimedia Agency, has made for Andrea Bilics SRL all the graphics, the development XHTML, CSS and CMS.  
+
+      Special thanks for the photographs made by the Ocho Durando's team.
+
+      <a href="http://portfolio.ochodurando.com" target="_blank">See the website</a>
+
+    booking-success: >
       <strong>Thank you</strong>
 
 
@@ -130,7 +146,7 @@ en:
 
       You will receive a reply as soon as possibie.
 
-    booking-warning:
+    booking-warning: >
       <strong>Attention</strong>
 
 
@@ -138,6 +154,7 @@ en:
 
 
       Please check the form and try again.
+
   booking-form:
     intro-text: Please fill the following form to make a reservation.
     labels:

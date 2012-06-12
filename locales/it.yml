@@ -10,14 +10,18 @@ it:
     prices-and-bookings: prezzi-e-prenotazioni
     contacts: contatti
     photogallery: photogallery
+    privacy: privacy
+    credits: credits
   menu:
     villas: Le ville
     activities: Attività
     prices_and_bookings: Prezzi e prenotazioni
     contacts: Contatti
     photogallery: Photogallery
+    privacy: Privacy
+    credits: Credits
   contents:
-    home: >
+    index: >
       L’arcipelago di Lamu è avvolto da un’affascinante atmosfera medievale, che sembra non aver
       mutato di molto l’aspetto ed il carattere nel corso dei secoli. Formato da alcune isole
       maggiori e un’infinità di isolotti più piccoli, questo arcipelago è il gioiello della costa
@@ -109,20 +113,36 @@ it:
       +254 713286749
 
     privacy: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      Ai sensi dell’art. 13 del Decreto Legislativo 30 giugno 2003, n. 196 e successive modifiche ed integrazioni (di seguito, il “Codice Privacy”), in qualità di Interessato, Vi informiamo che i dati personali da Voi forniti ovvero altrimenti acquisiti, ove lecito, nell'ambito della nostra attività (di seguito i "Dati") sono trattati nel rispetto del Codice Privacy e degli obblighi di riservatezza cui è ispirata l'attività della Mandadream.
+
+
+      I Dati sono raccolti con modalità telematiche e successivamente trattati con mezzi informatici e manuali, esclusivamente per finalità connesse alla prestazione dei servizi richiesti dall’utente. Il trattamento è eseguito in conformità alle disposizioni vigenti in tema di sicurezza, con particolare ma non esclusivo riferimento all’Allegato al Codice Privacy B (Disciplinare Tecnico in materia di misure minime di sicurezza).
+
+
+      I Dati saranno accessibili all’interno dell’organizzazione societaria della Mandadream esclusivamente alle persone che hanno bisogno di conoscerli in ragione delle loro mansioni in concomitanza con lo svolgimento del rapporto contrattuale con Voi. L’elenco completo ed aggiornato dei Responsabili del trattamento eventualmente nominati resterà a Vostra disposizione presso il Titolare. I Dati potranno essere comunicati a enti, autorità, istituzioni pubbliche, banche ed istituti di credito, professionisti, collaboratori autonomi, partner commerciali e terzi di cui Mandadream si serve per l’esecuzione del rapporto contrattuale, nonché a chiunque sia legittimo destinatario di comunicazioni previste da norme di legge o regolamentari.
+
+
+      Tali soggetti tratteranno i Dati quali Titolari, Responsabili ovvero incaricati di trattamento, a seconda dei casi, esclusivamente per le finalità di trattamenti sopra specificate. I Dati non saranno in alcun modo diffusi. Mandadream Vi informa che potrete far valere i diritti di cui all'art. 7 del Codice Privacy fra i quali Vi ricordiamo, a titolo puramente esemplificativo, il diritto di chiedere l'accesso, la cancellazione per violazione di legge, l'aggiornamento, la rettifica dei dati ed il blocco per motivi legittimi del trattamento. Il Titolare del trattamento è Mandadream, che potrà essere contattato al seguente indirizzo: info@mandadream.com
+
+
+      I sistemi informativi ed i programmi informatici sono configurati riducendo al minimo l’uso di dati personali ed identificativi non necessari alle finalità di trattamento sopra specificate.
+
+
+      La comunicazione dei Dati è necessaria alla prestazione dei servizi ed il suo eventuale mancato conferimento comporterà l’impossibilità per Mandadream di soddisfarla.
+
+
+      Mandadream rileva che, in relazione al trattamento necessario alla prestazione completa dei servizi, quali l’iscrizione al servizio di newsletter e al trattamento necessario per rispondere a domande dell’utente ed inviare allo stesso le informazioni richieste, nei limiti e con le modalità stabiliti dalla legge e dalla presente informativa, ai sensi dell’art. 24 del Codice Privacy è necessario il Vostro consenso.
 
     credits: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+      <b>Questo sito è stato realizzato sotto la supervisione di 
+      Ocho Durando</b>
+
+
+      La Ocho Durando Graphic and Multimedia Agency, ha realizzato per Andrea Bilics la progettazione grafica, lo sviluppo XHTML, CSS e CMS.  
+
+      Un ringraziamento particolare per le fotografie realizzate dallo staff fotografico di Ocho Durando.  
+
+      <a href="http://portfolio.ochodurando.com" target="_blank">Vai al sito web</a>
 
     booking-success: >
       <strong>Grazie</strong>

@@ -26,7 +26,7 @@ $ ->
   $(window).resize()
 
   window.setup_slideshow = (container_selector) ->
-    $.ajax(url: '/images.html').done (res) ->
+    $.ajax(url: 'slides.html').done (res) ->
       backgrounds = []
       $(res).filter(container_selector).find('img').each ->
         backgrounds.push { src: $(this).attr('src'), fade: 700 }
@@ -56,7 +56,7 @@ $ ->
       $('.previous').click -> $.vegas 'previous'
 
   window.load_photogallery = ->
-    $.ajax(url: '/images.html').done (res) ->
+    $.ajax(url: 'slides.html').done (res) ->
       backgrounds = []
       thumbs = []
 
@@ -65,7 +65,12 @@ $ ->
       # $(res).find('img').each ->
       $(res).filter('#photogallery').find('img').each ->
         backgrounds.push { src: $(this).attr('src'), fade: 700 }
-        thumb_src = $(this).attr('data-thumb') || "/images/slides/photogallery/thumbs/" + $(this).attr('src').match(/([0-9]+\.jpg)/)[0]
+        thumb_src = $(this).attr('data-thumb')
+
+        if (!thumb_src)
+          tokens = $(this).attr('src').match /^(.*)\/([0-9]+.jpg|jpeg|gif|png)$/
+          thumb_src = tokens[1] + '/thumbs/' + tokens[2]
+
         thumbs.push { src: thumb_src, caption: $(this).attr('data-caption') }
 
       $('.gallery .toggle').click ->
@@ -131,8 +136,8 @@ $ ->
     if panel.attr('data-status') == 'open'
       icon.html '&#x003e;'
       panel.attr('data-status', 'closed').animate left: -panel.width(), 'easeOutBack'
-      $(this).animate left: 20, 'normal', 'easeOutBack'
-      $('.slideshow.previous').animate left: 20
+      $(this).animate left: 20, 'easeOutBack'
+      $('.slideshow.previous').animate left: 20, 'easeOutBack'
     else
       icon.html '&#x0024;'
       panel.attr('data-status', 'open').animate left: 0, 'easeOutBack'

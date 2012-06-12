@@ -17,7 +17,7 @@
     %header
       %hgroup
         %h1.logo
-          = link_to image_tag('mandadream-logo.png', :alt => 'Mandadream'), (I18n.locale.to_s == 'en' ? '/' : "/it/")
+          = link_to image_tag('mandadream-logo.png', :alt => 'Mandadream'), (I18n.locale.to_s == 'en' ? 'index.html' : "it/index.html")
         %h2.tagline Luxury Villas - Manda - Lamu - Kenya
       %nav(role="navigation")
         = link_to I18n.t('menu.villas'), localized_path('villas'), :class => 'villas'
@@ -51,8 +51,8 @@
         = image_tag('circle-yellow.png')
         %i.icon &#x0039;
       %nav
-        = link_to "Credits"
-        = link_to "Privacy"
+        = link_to "Credits", localized_path('credits'), :class => 'credits'
+        = link_to "Privacy", localized_path('privacy'), :class => 'privacy'
       .slideshow-controls
         %a.icon.play &#x0028;
         %nav

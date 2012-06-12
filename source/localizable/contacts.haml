@@ -1,8 +1,5 @@
 = javascript_include_tag 'https://maps.googleapis.com/maps/api/js?sensor=false'
 
-:css
-  .slideshow.previous, .slideshow.next { display: none; }
-
 :coffeescript
   google.maps.event.addDomListener window, 'load', ->
     window.map = new google.maps.Map document.getElementById('map'), {
@@ -33,4 +30,5 @@
     }
 
 %h1.title-1= I18n.t 'menu.contacts'
+
 = simple_format I18n.t 'contents.contacts'

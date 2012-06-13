@@ -76,6 +76,9 @@ end
 
 activate :i18n, :mount_at_root => :en
 
+# set :build_dir, 'public'
+# set :http_prefix, 'preview'
+
 # Build-specific configuration
 configure :build do
   # For example, change the Compass output style for deployment
@@ -94,7 +97,4 @@ configure :build do
   # First: gem install middleman-smusher
   # require "middleman-smusher"
   # activate :smusher
-
-  # Or use a different image path
-  # set :http_prefix, "/preview"
 end

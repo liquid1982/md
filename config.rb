@@ -77,7 +77,7 @@ end
 activate :i18n, :mount_at_root => :en
 
 # set :build_dir, 'public'
-# set :http_prefix, 'preview'
+# set :http_prefix, '/preview'
 
 # Build-specific configuration
 configure :build do

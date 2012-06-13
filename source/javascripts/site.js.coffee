@@ -19,25 +19,21 @@ $ ->
 
     $(el).antiscroll()
 
-  $(window).resize ->
-    c = $('.container[role="main"]')
-    $('.slideshow.previous, .slideshow.next').css('top', ($(window).height() / 2))
-
-  $(window).resize()
+  $(window).resize(-> $('.slideshow.previous, .slideshow.next').css 'top', ($(window).height() / 2)).resize()
 
   window.setup_slideshow = (container_selector) ->
     $.ajax(url: 'slides.html').done (res) ->
       backgrounds = []
       $(res).filter(container_selector).find('img').each ->
-        backgrounds.push { src: $(this).attr('src'), fade: 700 }
+        backgrounds.push src: $(this).attr('src'), fade: 700
 
       $(backgrounds).each (i, el) ->
-        $('.slideshow-controls nav').append("<a class='icon' data-rel='#{i}'>#</a>")
+        $('.slideshow-controls nav').append "<a class='icon' data-rel='#{i}'>#</a>"
 
-      $('.slideshow-controls nav .icon:first-child').addClass('active');
+      $('.slideshow-controls nav .icon:first-child').addClass 'active'
       $('.slideshow-controls nav .icon').click ->
-        $(this).addClass('active').siblings().removeClass('active')
-        $.vegas 'jump', $(this).attr('data-rel')
+        $(this).addClass('active').siblings().removeClass 'active'
+        $.vegas 'jump', $(this).attr 'data-rel'
 
       $('.slideshow-controls .play').click ->
         if $.vegas 'get', 'paused'
@@ -50,12 +46,12 @@ $ ->
       $.vegas 'slideshow', backgrounds: backgrounds, delay: 4000
 
       $('body').bind 'vegaswalk', (e, bg, step)  ->
-        $(".icon[data-rel='#{step}']").addClass('active').siblings().removeClass('active')
+        $(".icon[data-rel='#{step}']").addClass('active').siblings().removeClass 'active'
 
       $('.next').click -> $.vegas 'next'
       $('.previous').click -> $.vegas 'previous'
 
-  window.load_photogallery = ->
+  window.setup_photogallery = ->
     $.ajax(url: 'slides.html').done (res) ->
       backgrounds = []
       thumbs = []
@@ -64,33 +60,33 @@ $ ->
 
       # $(res).find('img').each ->
       $(res).filter('#photogallery').find('img').each ->
-        backgrounds.push { src: $(this).attr('src'), fade: 700 }
-        thumb_src = $(this).attr('data-thumb')
+        backgrounds.push src: $(this).attr('src'), fade: 700
+        thumb_src = $(this).attr 'data-thumb'
 
         if (!thumb_src)
           tokens = $(this).attr('src').match /^(.*)\/([0-9]+.jpg|jpeg|gif|png)$/
           thumb_src = tokens[1] + '/thumbs/' + tokens[2]
 
-        thumbs.push { src: thumb_src, caption: $(this).attr('data-caption') }
+        thumbs.push src: thumb_src, caption: $(this).attr('data-caption')
 
       $('.gallery .toggle').click ->
         panel = $('.gallery')
-        icon  = $(this).find('.icon')
+        icon  = $(this).find '.icon'
 
         if panel.attr('data-status') == 'open'
-          panel.attr('data-status', 'closed').animate 'bottom': -panel.height(), 'normal'
+          panel.attr('data-status', 'closed').animate bottom: -panel.height(), 'normal'
           icon.html '&#x0026;'
-          $(this).animate 'top': -40, 'normal', 'easeOutBack'
+          $(this).animate top: -40, 'normal', 'easeOutBack'
         else
-          panel.attr('data-status', 'open').animate 'bottom': 0, 'normal'
+          panel.attr('data-status', 'open').animate bottom: 0, 'normal'
           icon.html '&#x0025;'
-          $(this).animate 'top': 15, 'normal', 'easeOutBack'
+          $(this).animate top: 15, 'normal', 'easeOutBack'
 
       $(thumbs).each (i, el) ->
         $('.gallery .thumbs').append "<span><img src='#{el.src}' data-rel='#{i}' data-caption='#{el.caption}' /></span>"
 
       $('.gallery .thumbs img').click ->
-        $.vegas 'jump', $(this).attr('data-rel')
+        $.vegas 'jump', $(this).attr 'data-rel'
 
       $('.gallery .controls .total').text thumbs.length
 
@@ -99,14 +95,14 @@ $ ->
         ol = $('.gallery .thumbs span:last-child').offset().left
 
         if ol > ww / 2
-          $('.gallery .thumbs').animate left: "-=#{ww/2}px"
+          $('.gallery .thumbs').animate left: "-=#{ww}"
 
       $('.gallery .left').click ->
         ww   = $(window).width()
-        left = parseInt $('.gallery .thumbs').css('left')
+        left = parseInt $('.gallery .thumbs').css 'left'
 
         if left < 0
-          $('.gallery .thumbs').animate { left: "+=#{ww/2}px" }, step: (now, fx) ->
+          $('.gallery .thumbs').animate { left: "+=#{ww}" }, step: (now, fx) ->
             if now > 0
               $(this).stop().animate left: 0
 
@@ -121,9 +117,22 @@ $ ->
       $.vegas 'slideshow', backgrounds: backgrounds
 
       $('body').bind 'vegaswalk', (e, bg, step)  ->
-        $(".gallery img[data-rel='#{step}']").parent().addClass('active').siblings().removeClass('active')
+        $(".gallery img[data-rel='#{step}']").parent().addClass('active').siblings().removeClass 'active'
         $('.gallery .caption').css('opacity', 0).text($(".gallery img[data-rel='#{step}']").attr('data-caption')).animate opacity: 1, 'slow'
         $('.gallery .controls .current').text(step + 1)
+
+        atl = $('.gallery .active').offset().left
+        ww = $(window).width()
+
+        if atl > ww
+          $('.gallery .thumbs').animate left: "-=#{atl}"
+        else if atl < 0
+          tl = $('.gallery .thumbs').offset().left
+          left = tl + ww
+          if left > 0
+            $('.gallery .thumbs').animate left: 0
+          else
+            $('.gallery .thumbs').animate left: left
 
       $('.next').click -> $.vegas 'next'
       $('.previous').click -> $.vegas 'previous'
@@ -131,7 +140,7 @@ $ ->
   # Pannello laterale
   $('.toggle-panel').click ->
     panel = $('[data-status="open"], [data-status="closed"]')
-    icon  = $(this).find('.icon')
+    icon  = $(this).find '.icon'
 
     if panel.attr('data-status') == 'open'
       icon.html '&#x003e;'
@@ -154,7 +163,7 @@ $ ->
     input = $(this)
     if input.val() == '' || input.val() == input.attr 'placeholder'
       input.addClass 'placeholder'
-      input.val input.attr('placeholder')
+      input.val input.attr 'placeholder'
   ).blur().parents('form').submit ->
     $(this).find('[placeholder]').each ->
       input = $(this)

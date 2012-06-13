@@ -2,7 +2,7 @@
 en:
   strings:
     about-manda: About Manda
-    prices: Prices
+    prices: Rates
     bookings: Bookings
   paths:
     villas: villas
@@ -91,11 +91,13 @@ en:
       reading a book on our sunbeds by the sea, or enjoying a massage in your room.
 
     prices-and-bookings: >
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-      cillum dolore eu fugiat nulla pariatur.
+      Rates start from €250 per room per night.
+
+
+      It is possible to choose between half board and full board.
+
+
+      Rates include boat transfer from/to Manda airport.
 
     contacts: >
       For more information please send us an email:

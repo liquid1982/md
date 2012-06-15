@@ -1,9 +1,10 @@
-:coffeescript
-  $ -> window.setup_photogallery()
+- content_for :head do
+  :coffeescript
+    $ -> window.setup_photogallery()
 
-:css
-  .container[role="main"], .toggle-panel { display: none; }
-  .slideshow.previous { left: 20px; }
+  :css
+    .container[role="main"], .toggle-panel { display: none; }
+    .slideshow.previous { left: 20px; }
 
 .gallery(data-status="open")
   %a.left.icon &#x0024;

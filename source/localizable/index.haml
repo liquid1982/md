@@ -1,7 +1,6 @@
-:coffeescript
-  $ -> window.setup_slideshow '#index'
-
-/ %h1.title-1= I18n.t 'strings.about-manda'
+- content_for :head do
+  :coffeescript
+    $ -> window.setup_slideshow '#index'
 
 .scrollable
   = simple_format I18n.t 'contents.index'

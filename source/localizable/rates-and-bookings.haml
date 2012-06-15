@@ -1,14 +1,16 @@
-= stylesheet_link_tag 'vendor/custom-theme/jquery-ui-1.8.21.custom.css'
 - # jQuery UI *richiede* una stringa vuota se il linguaggio di default è l'inglese. Checcretini.
 - cal_lang = I18n.locale.to_s == 'en' ? '' : I18n.locale
 - cal_date_format = I18n.locale.to_s == 'en' ? 'MM d, yy' : 'd MM yy'
 
-:coffeescript
-  $ ->
-    window.setup_slideshow '#rates-and-bookings'
-    $.datepicker.setDefaults( $.datepicker.regional[ "#{cal_lang}" ] )
-    $('input[name="arrival_date"]').datepicker()
-    $('input[name="arrival_date"]').datepicker( "option", "dateFormat", "#{cal_date_format}" );
+- content_for :head do
+  = stylesheet_link_tag 'vendor/custom-theme/jquery-ui-1.8.21.custom.css'
+
+  :coffeescript
+    $ ->
+      window.setup_slideshow '#rates-and-bookings'
+      $.datepicker.setDefaults( $.datepicker.regional[ "#{cal_lang}" ] )
+      $('input[name="arrival_date"]').datepicker()
+      $('input[name="arrival_date"]').datepicker( "option", "dateFormat", "#{cal_date_format}" );
 
 %ul.nav
   %li

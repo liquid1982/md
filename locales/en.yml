@@ -7,7 +7,7 @@ en:
   paths:
     villas: villas
     activities: activities
-    prices-and-bookings: prices-and-bookings
+    rates-and-bookings: rates-and-bookings
     contacts: contacts
     photogallery: photogallery
     privacy: privacy
@@ -15,7 +15,7 @@ en:
   menu:
     villas: Villas
     activities: Activities
-    prices_and_bookings: Prices and bookings
+    prices_and_bookings: Rates and bookings
     contacts: Contacts
     photogallery: Photogallery
     privacy: Privacy
@@ -90,7 +90,7 @@ en:
       Or, you can just relax, watching the dhows sailing by from our swing hammocks in the veranda,
       reading a book on our sunbeds by the sea, or enjoying a massage in your room.
 
-    prices-and-bookings: >
+    rates-and-bookings: >
       Rates start from €250 per room per night.
 
 

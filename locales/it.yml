@@ -7,7 +7,7 @@ it:
   paths:
     villas: ville
     activities: attivita
-    prices-and-bookings: prezzi-e-prenotazioni
+    rates-and-bookings: prezzi-e-prenotazioni
     contacts: contatti
     photogallery: photogallery
     privacy: privacy
@@ -93,7 +93,7 @@ it:
       veranda, leggendo un libro sui nostri lettini in spiaggia, o concedendovi un massaggio nella
       vostra stanza.
 
-    prices-and-bookings: >
+    rates-and-bookings: >
       Prezzi a partire da €250 a camera a notte.
 
 

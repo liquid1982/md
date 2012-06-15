@@ -1,5 +1,6 @@
 #= require 'vendor/jquery'
-#= require 'vendor/jquery-ui-1.8.20.custom.js'
+#= require 'vendor/jquery-ui-1.8.21.custom'
+#= require 'vendor/jquery.ui.datepicker-it'
 #= require 'vendor/jquery.vegas'
 #= require 'vendor/jquery-mousewheel'
 #= require 'vendor/antiscroll'
@@ -136,6 +137,13 @@ $ ->
 
       $('.next').click -> $.vegas 'next'
       $('.previous').click -> $.vegas 'previous'
+
+  # Gallery navigabile da tastiera
+  $(document).keydown (e) ->
+    switch e.keyCode
+      when 37 then $.vegas 'previous'
+      when 39 then $.vegas 'next'
+      when 40 then $('.gallery .toggle').trigger 'click'
 
   # Pannello laterale
   $('.toggle-panel').click ->

@@ -1,7 +1,7 @@
 = stylesheet_link_tag 'vendor/custom-theme/jquery-ui-1.8.21.custom.css'
-- # jQuery UI *richiede* una stringa vuota se il linguaggio di default è l'inglese. Che cretini.
+- # jQuery UI *richiede* una stringa vuota se il linguaggio di default è l'inglese. Checcretini.
 - cal_lang = I18n.locale.to_s == 'en' ? '' : I18n.locale
-- cal_date_format = I18n.locale.to_s == 'en' ? 'DD, d MM yy' : 'DD d MM yy'
+- cal_date_format = I18n.locale.to_s == 'en' ? 'MM d, yy' : 'd MM yy'
 
 :coffeescript
   $ ->

@@ -287,15 +287,18 @@ footer
       margin-bottom: 5px
       width: 100%
 
+      &.placeholder
+        color: lighten($brown, 50)
+
+        &:focus
+          color: #FFF
+
       &:focus
         +single-transition
         +box-shadow(0 0 10px rgba(255, 204, 0, 1))
         border-color: $yellow
         outline: 0
         color: #FFF
-
-      &.placeholder
-        color: lighten($brown, 50)
 
     .error-message
       display: none

@@ -1,11 +1,13 @@
+<% relative_path_prefix = (I18n.locale.to_s == I18n.default_locale.to_s) ? '' : '../' %>
 <?php
+
   date_default_timezone_set('Europe/Rome');
   session_start();
 
   define('ENV', (($_SERVER['HTTP_HOST'] == 'www.mandadream.com') ? 'production' : 'development'));
 
-  require("{$_SERVER['DOCUMENT_ROOT']}/lib/class.phpmailer.php");
-  require("{$_SERVER['DOCUMENT_ROOT']}/lib/formvalidator.php");
+  require("<%= relative_path_prefix %>lib/class.phpmailer.php");
+  require("<%= relative_path_prefix %>lib/formvalidator.php");
 
   $config = array(
     'production' => array(
@@ -88,9 +90,9 @@
 
   $booking_mail->Subject = "<%= I18n.t('booking-form.mail.new-booking-subject') %>";
   $booking_mail->Body    = <<<HTML
-    <%= I18n.t('booking-form.mail.new-booking-top') %>
+    <%= t('booking-form.mail.new-booking-top') %>
     {$details}
-    <%= I18n.t('booking-form.mail.new-booking-bottom') %>
+    <%= t('booking-form.mail.new-booking-bottom') %>
 HTML;
 
   $thankyou_mail = new PHPMailer();
@@ -107,9 +109,9 @@ HTML;
 
   $thankyou_mail->Subject = "<%= I18n.t('booking-form.mail.thankyou-subject') %>";
   $thankyou_mail->Body    = <<<HTML
-    <%= I18n.t('booking-form.mail.thankyou-top') %>
+    <%= t('booking-form.mail.thankyou-top') %>
     {$details}
-    <%= I18n.t('booking-form.mail.thankyou-bottom') %>
+    <%= t('booking-form.mail.thankyou-bottom') %>
 HTML;
 
   if ($booking_mail->Send()) {

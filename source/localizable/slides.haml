@@ -4,6 +4,6 @@
   %div{:id => section}
     - Dir.entries("#{slides_dir}/#{section}").select { |slide| slide.end_with? 'jpg', 'jpeg', 'gif', 'png' }.each do |slide|
       - name = slide.gsub(/.(jpg|jpeg|gif|png)/, '')
-      - caption = I18n.t("captions.#{section}.s#{name}")
+      - caption = t("captions.#{section}.s#{name}")
       - caption = caption.start_with?('translation missing:') ? '' : caption
       = image_tag "slides/#{section}/#{slide}", :'data-caption' => caption

@@ -2,7 +2,7 @@
   :coffeescript
     $ -> window.setup_slideshow '#credits'
 
-%h1.title-1= I18n.t 'menu.credits'
+%h1.title-1= t('menu.credits')
 
 .scrollable
-  = simple_format I18n.t 'contents.credits'
+  = simple_format t('contents.credits')

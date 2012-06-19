@@ -2,7 +2,7 @@
   :coffeescript
     $ -> window.setup_slideshow "##{@page}"
 
-%h1.title-1= I18n.t "menu.#{@page}"
+%h1.title-1= t("menu.#{@page}")
 
 .scrollable
-  = simple_format I18n.t "contents.#{@page}"
+  = simple_format t("contents.#{@page}")

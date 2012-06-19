@@ -16,6 +16,10 @@ helpers do
     path = I18n.t "paths.#{path}"
     "#{path}.#{extension}"
   end
+
+  def t(string)
+    I18n.t(string)
+  end
 end
 
 configure :build do

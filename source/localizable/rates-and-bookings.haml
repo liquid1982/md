@@ -28,35 +28,35 @@
   = form_tag 'form.php' do
     .field
       = text_field_tag :first_name, :placeholder => I18n.t('booking-form.labels.first_name'), :name => 'first_name'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :last_name, :placeholder => I18n.t('booking-form.labels.last_name'), :name => 'last_name'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :email, :placeholder => I18n.t('booking-form.labels.email'), :name => 'email'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :phone, :placeholder => I18n.t('booking-form.labels.phone'), :name => 'phone'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :arrival_date, :placeholder => I18n.t('booking-form.labels.arrival_date'), :name => 'arrival_date'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :nights, :placeholder => I18n.t('booking-form.labels.nights'), :name => 'nights'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :people, :placeholder => I18n.t('booking-form.labels.people'), :name => 'people'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     .field
       = text_field_tag :from_country, :placeholder => I18n.t('booking-form.labels.from_country'), :name => 'from_country'
-      %p.error-message= I18n.t 'error-messages.required-field'
+      %p.error-message= I18n.t 'booking-form.error-messages.required-field'
 
     = text_area_tag  :notes, :placeholder => I18n.t('booking-form.labels.notes'), :name => 'notes'
 

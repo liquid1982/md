@@ -8,20 +8,6 @@
 
 $ ->
 
-  $('.scrollable').each (i, el) ->
-    $(el).addClass('antiscroll-wrap')
-      .wrapInner('<div class="box-inner" />')
-      .wrapInner('<div class="antiscroll-inner" />')
-      .wrapInner('<div class="box" />')
-
-    $(el).find('.box, .antiscroll-inner').css 'width', $(el).attr('data-width') || ($('.container[role="main"]').width() - 60)
-    $(el).find('.box, .antiscroll-inner').css 'height', $(el).attr('data-height') || ($(window).height() / 2)
-    # $(el).find('.box-inner').css 'padding-right', 20
-
-    $(el).antiscroll()
-
-  $(window).resize(-> $('.slideshow.previous, .slideshow.next').css 'top', ($(window).height() / 2)).resize()
-
   window.setup_slideshow = (container_selector) ->
     $.ajax(url: 'slides.html').done (res) ->
       backgrounds = []
@@ -143,7 +129,7 @@ $ ->
     switch e.keyCode
       when 37 then $.vegas 'previous'
       when 39 then $.vegas 'next'
-      when 40 then $('.gallery .toggle').trigger 'click'
+      when 38, 40 then $('.gallery .toggle').trigger 'click'
 
   # Pannello laterale
   $('.toggle-panel').click ->
@@ -160,6 +146,22 @@ $ ->
       panel.attr('data-status', 'open').animate left: 0, 'easeOutBack'
       $(this).animate 'left': 260, 'easeOutBack'
       $('.slideshow.previous').animate left: 300, 'easeOutBack'
+
+  # Posizionamento frecce
+  $(window).resize(-> $('.slideshow.previous, .slideshow.next').css 'top', ($(window).height() / 2)).resize()
+
+  # Barra di scorrimento custom
+  $('.scrollable').each (i, el) ->
+    $(el).addClass('antiscroll-wrap')
+      .wrapInner('<div class="box-inner" />')
+      .wrapInner('<div class="antiscroll-inner" />')
+      .wrapInner('<div class="box" />')
+
+    $(el).find('.box, .antiscroll-inner').css 'width', $(el).attr('data-width') || ($('.container[role="main"]').width() - 60)
+    $(el).find('.box, .antiscroll-inner').css 'height', $(el).attr('data-height') || ($(window).height() / 2)
+    # $(el).find('.box-inner').css 'padding-right', 20
+
+    $(el).antiscroll()
 
   # Supporto cross-browser per attributo placeholder
   $('[placeholder]').focus(->
@@ -178,6 +180,7 @@ $ ->
       if input.val() == input.attr 'placeholder'
         input.val ''
 
+  # Gestione form
   $('#bookings form').submit (e) ->
     e.preventDefault()
     $.post 'form.php', $(this).serialize(), (res) ->

@@ -1,9 +1,9 @@
 ---
 en:
   strings:
-    about-manda: About Manda
     prices: Rates
     bookings: Bookings
+
   paths:
     villas: villas
     activities: activities
@@ -12,6 +12,7 @@ en:
     photogallery: photogallery
     privacy: privacy
     credits: credits
+
   menu:
     villas: Villas
     activities: Activities
@@ -20,6 +21,7 @@ en:
     photogallery: Photogallery
     privacy: Privacy
     credits: Credits
+
   contents:
     index: >
       A fascinating medieval atmosphere envelops Lamu’s archipelago, which has not changed much in
@@ -112,35 +114,105 @@ en:
       +254 713286749
 
     privacy: >
-      Pursuant to par. 13 of the Legislative Decree of 30 June 2003, no.196, and to its successive modifications and amendments, hereafter referred to as the Privacy Code, we as the Subject hereby inform you that the personal information either supplied by you or otherwise legitimately acquired in pursuance of our activities is handled in full accordance with that Privacy Code and with the obligations of confidentiality which characterise the operations of Mandadream.
+      Pursuant to par. 13 of the Legislative Decree of 30 June 2003, no.196, and to its successive
+      modifications and amendments, hereafter referred to as the Privacy Code, we as the Subject
+      hereby inform you that the personal information either supplied by you or otherwise
+      legitimately acquired in pursuance of our activities is handled in full accordance with that
+      Privacy Code and with the obligations of confidentiality which characterise the operations of
+      Mandadream.
 
 
-      The Information is gathered by remote means, then processed by computerised and manual means, exclusively for purposes connected to the furnishing of services requested by the User. Processing is carried out in conformity with privacy regulations currently in force, with particular although not exclusive reference to the Attachment to the Privacy Code B (Technical Code regarding minimal security measures).
+      The Information is gathered by remote means, then processed by computerised and manual means,
+      exclusively for purposes connected to the furnishing of services requested by the User.
+      Processing is carried out in conformity with privacy regulations currently in force, with
+      particular although not exclusive reference to the Attachment to the Privacy Code B (Technical
+      Code regarding minimal security measures).
 
 
-      Such Information is available within the Mandadream organisation only to employees who need to have access to it for reasons of responsibilities that follow from our contractual relationship with you. The complete and updated list of such employees who may be delegated for such activity is available to you from us. That information can be communicated to bodies, authorities, public institutions, banks and credit institutes, professionals, independent contractors, business partners, and third parties which are utilised by Mandadream to satisfy its contractual obligations, as well as to whoever may be a legitimate addressee of communications provided for by legal obligations or regulations. Such subjects, as Owners, Managers, or employees delegated to such processing, shall handle and process that Information, whatever the individual situation, exclusively for the above-mentioned processing purposes. Such Information shall in no way be divulged. Mandadream informs you that you may invoke the rights listed in par.7 of the Privacy Code, among which are, simply as an example, the right to request access, to cancel following violation of law, to update, to correct data, and to block processing for legitimate reasons. The Owner of such processing is Mandadream, which may be contacted at the following address: info@mandadream.com
+      Such Information is available within the Mandadream organisation only to employees who need to
+      have access to it for reasons of responsibilities that follow from our contractual
+      relationship with you. The complete and updated list of such employees who may be delegated
+      for such activity is available to you from us. That information can be communicated to bodies,
+      authorities, public institutions, banks and credit institutes, professionals, independent
+      contractors, business partners, and third parties which are utilised by Mandadream to satisfy
+      its contractual obligations, as well as to whoever may be a legitimate addressee of
+      communications provided for by legal obligations or regulations. Such subjects, as Owners,
+      Managers, or employees delegated to such processing, shall handle and process that
+      Information, whatever the individual situation, exclusively for the above-mentioned processing
+      purposes. Such Information shall in no way be divulged. Mandadream informs you that you may
+      invoke the rights listed in par.7 of the Privacy Code, among which are, simply as an example,
+      the right to request access, to cancel following violation of law, to update, to correct data,
+      and to block processing for legitimate reasons. The Owner of such processing is Mandadream,
+      which may be contacted at the following address: info@mandadream.com
 
 
-      The information systems and computer programs have been designed to reduce to a minimum the use of personal and identifying information not necessary to the above-mentioned processing purposes.
+      The information systems and computer programs have been designed to reduce to a minimum the
+      use of personal and identifying information not necessary to the above-mentioned processing
+      purposes.
 
 
-      The communication of the Information is necessary to the provision of services, and failure to furnish such Information will entail Mandadream’s inability to provide such service.
+      The communication of the Information is necessary to the provision of services, and failure to
+      furnish such Information will entail Mandadream’s inability to provide such service.
 
 
-      Mandadream hereby notifies you that in order to completely furnish services such as subscription to its newsletter, processing aimed at replying to user’s questions, and transmittal of requested information, within the limitations and methodologies established by law and these present guidelines, pursuant to par. 24 of the Privacy Code, your consent is necessary.
+      Mandadream hereby notifies you that in order to completely furnish services such as
+      subscription to its newsletter, processing aimed at replying to user’s questions, and
+      transmittal of requested information, within the limitations and methodologies established by
+      law and these present guidelines, pursuant to par. 24 of the Privacy Code, your consent is
+      necessary.
 
     credits: >
       <strong>This site was built under the supervision of
       Ocho Durando</strong>
 
 
-      The Ocho Durando Graphic and Multimedia Agency, has made for Andrea Bilics SRL all the graphics, the development XHTML, CSS and CMS.  
+      The Ocho Durando Graphic and Multimedia Agency, has made for Andrea Bilics SRL all the
+      graphics, the development XHTML, CSS and CMS.  
 
 
       Special thanks for the photographs made by the Ocho Durando's team.
 
 
       <a href="http://portfolio.ochodurando.com" target="_blank">See the website</a>
+
+  booking-form:
+    intro-text: Please fill the following form to make a reservation.
+
+    error-messages:
+      required-field: This field is required. Please check.
+
+    labels:
+      first_name: First name
+      last_name: Last name
+      email: Email
+      phone: Phone
+      arrival_date: Arrival date
+      nights: Nights
+      people: People
+      from_country: From country
+      notes: Notes
+      newsletter: Newsletter subscription
+      submit: Submit
+
+    mail:
+      new-booking-subject: "[ Mandadream ] New booking"
+
+      new-booking-top: >
+        <p>A new booking was made through the <b>Mandadream</b> website.</p>
+        <p>Details provided follows:</p>
+
+      new-booking-bottom: >
+        <p>This is an automatic message generated by <a href="http://www.mandadream.it">Mandadream</a> web site.
+
+      thankyou-subject: "[ Mandadream ] Prenotazione effettuata con successo"
+
+      thankyou-top: >
+        <p>Gentile {$_REQUEST['first_name']} {$_REQUEST['last_name']}, desideriamo ringraziarti per
+        aver effettuato una prenotazione su Mandadream.</p>
+        <p>Questi sono i dati da te inseriti:</p>
+
+      thankyou-bottom:
+        <p>Grazie ancora dallo Staff di <a href="http://www.mandadream.it">Mandadream</a>.
 
     booking-success: >
       <strong>Thank you</strong>
@@ -160,32 +232,65 @@ en:
 
       Please check the form and try again.
 
-  booking-form:
-    intro-text: Please fill the following form to make a reservation.
-    labels:
-      first_name: First name
-      last_name: Last name
-      email: Email
-      phone: Phone
-      arrival_date: Arrival date
-      nights: Nights
-      people: People
-      from_country: From country
-      notes: Notes
-      newsletter: Newsletter subscription
-      submit: Submit
-    mail:
-      new-booking-subject: "[ Mandadream ] New booking"
-      new-booking-top:
-        <p>A new booking was made through the <b>Mandadream</b> website.</p>
-        <p>Details provided follows:</p>
-      new-booking-bottom:
-        <p>This is an automatic message generated by <a href="http://www.mandadream.it">Mandadream</a> web site.
-      thankyou-subject: "[ Mandadream ] Prenotazione effettuata con successo"
-      thankyou-top:
-        <p>Gentile {$_REQUEST['first_name']} {$_REQUEST['last_name']}, desideriamo ringraziarti per aver effettuato una prenotazione su Mandadream.</p>
-        <p>Questi sono i dati da te inseriti:</p>
-      thankyou-bottom:
-        <p>Grazie ancora dallo Staff di <a href="http://www.mandadream.it">Mandadream</a>.
-  error-messages:
-    required-field: This field is required. Please check.
+  captions:
+    photogallery:
+      s00: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s01: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s02: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s03: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s04: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s05: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s06: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s07: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s08: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s09: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s10: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s11: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s12: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s13: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s14: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s15: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s16: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s17: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s18: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s19: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s20: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s21: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s22: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s23: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s24: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s25: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s26: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s27: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s28: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s29: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s30: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s31: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s32: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s33: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s34: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s35: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s36: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s37: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s38: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s39: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s40: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s41: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s42: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s43: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s44: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s45: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s46: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s47: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s48: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s49: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s50: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s51: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s52: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s53: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s54: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s55: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s56: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s57: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      s58: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+

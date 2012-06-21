@@ -17,7 +17,7 @@
     %header
       %hgroup
         %h1.logo
-          = link_to image_tag('mandadream-logo.png', :alt => 'Mandadream'), (I18n.locale.to_s == I18n.default_locale.to_s ? "/" : "/#{I18n.locale.to_s}/")
+          = link_to image_tag('mandadream-logo.png', :alt => 'Mandadream'), (I18n.locale.to_s == I18n.default_locale.to_s ? "#{http_prefix}" : "#{http_prefix}#{I18n.locale.to_s}/")
         %h2.tagline Luxury Villas - Manda - Lamu - Kenya
       %nav(role="navigation")
         = link_to t('menu.villas'), localized_path('villas'), :class => 'villas'
@@ -28,10 +28,10 @@
         %nav
           = link_to t('menu.photogallery'), localized_path('photogallery'), :class => 'photogallery'
           %span= "&emsp;·&emsp;"
-          = link_to 'EN', (I18n.default_locale.to_s == 'en' ? '/' : "/en/"), :class => 'en'
-          = link_to 'IT', (I18n.default_locale.to_s == 'it' ? '/' : "/it/"), :class => 'it'
+          = link_to 'EN', (I18n.default_locale.to_s == 'en' ? "#{http_prefix}" : "#{http_prefix}en/"), :class => 'en'
+          = link_to 'IT', (I18n.default_locale.to_s == 'it' ? "#{http_prefix}" : "#{http_prefix}it/"), :class => 'it'
           -# Per ciascuna lingua aggiunta in futuro...
-          =# link_to 'FR', (I18n.default_locale.to_s == 'fr' ? '/' : "/fr/"), :class => 'fr'
+          =# link_to 'FR', (I18n.default_locale.to_s == 'fr' ? "#{http_prefix}" : "#{http_prefix}fr/"), :class => 'fr'
     %span.toggle-panel
       = image_tag 'circle-brown.png'
       %i.icon &#x0024;

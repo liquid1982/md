@@ -6,7 +6,7 @@
 #= require 'vendor/antiscroll'
 #= require 'vendor/bootstrap'
 
-$ ->
+jQuery ->
 
   window.setup_slideshow = (container_selector) ->
     $.ajax(url: 'slides.html').done (html) ->
@@ -17,29 +17,33 @@ $ ->
     $(html).filter(container_selector).find('img').each ->
       backgrounds.push src: $(this).attr('src'), fade: 700
 
-    $(backgrounds).each (i, el) ->
-      $('.slideshow-controls nav').append "<a class='icon' data-rel='#{i}'>#</a>"
-
-    $('.slideshow-controls nav .icon:first-child').addClass 'active'
-    $('.slideshow-controls nav .icon').click ->
-      $(this).addClass('active').siblings().removeClass 'active'
-      $.vegas 'jump', $(this).attr 'data-rel'
-
-    $('.slideshow-controls .play').click ->
-      if $.vegas 'get', 'paused'
-        $.vegas 'slideshow'
-        $(this).html "&#x0028;"
-      else
-        $.vegas 'pause'
-        $(this).html "&#x0027;"
-
     $.vegas 'slideshow', backgrounds: backgrounds, delay: 4000
 
-    $('body').bind 'vegaswalk', (e, bg, step)  ->
-      $(".icon[data-rel='#{step}']").addClass('active').siblings().removeClass 'active'
+    if backgrounds.length > 0
 
-    $('.next').click -> $.vegas 'next'
-    $('.previous').click -> $.vegas 'previous'
+      $(backgrounds).each (i, el) ->
+        $('.slideshow-controls nav').append "<a class='icon' data-rel='#{i}'>#</a>"
+
+      $('.slideshow-controls nav .icon:first-child').addClass 'active'
+      $('.slideshow-controls nav .icon').click ->
+        $(this).addClass('active').siblings().removeClass 'active'
+        $.vegas 'jump', $(this).attr 'data-rel'
+
+      $('.slideshow-controls .play').click ->
+        if $.vegas 'get', 'paused'
+          $.vegas 'slideshow'
+          $(this).html "&#x0028;"
+        else
+          $.vegas 'pause'
+          $(this).html "&#x0027;"
+
+      $('.next').click -> $.vegas 'next'
+      $('.previous').click -> $.vegas 'previous'
+
+      $('body').bind 'vegaswalk', (e, bg, step)  ->
+        $(".icon[data-rel='#{step}']").addClass('active').siblings().removeClass 'active'
+    else
+      $.vegas 'pause'
 
   window.setup_photogallery = (container_selector) ->
     $.ajax(url: 'slides.html').done (html) ->

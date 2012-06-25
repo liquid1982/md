@@ -11,6 +11,7 @@ body[class*="activities"] nav .activities,
 body[class*="attivita"] nav .activities,
 body[class*="rates-and-bookings"] nav .rates-and-bookings,
 body[class*="prezzi-e-prenotazioni"] nav .rates-and-bookings,
+body[class*="photogallery"] nav .photogallery
 body[class*="contacts"] nav .contacts,
 body[class*="contatti"] nav .contacts,
 body[class*="privacy"] nav .privacy,
@@ -21,18 +22,12 @@ html[lang="it"] nav .it, html[lang="en"] nav .en
   // +box-shadow(inset #000 0 0 10px)
   // background-color: darken($brown, 5)
 
-.antiscroll-scrollbar
-  +box-shadow(none)
-  background: rgba(120, 99, 87, 0.5)
-
-.box-inner
-  padding-right: 20px
-
-b
-  font-weight: bold
-
-body[class*="photogallery"] nav .photogallery
-  color: $yellow
+body[class*="privacy"],
+body[class*="credits"],
+body[class*="contacts"],
+body[class*="contatti"]
+  .slideshow.previous, .slideshow.next, .slideshow-controls
+    display: none
 
 body[class*="contacts"],
 body[class*="contatti"]
@@ -45,6 +40,16 @@ body[class*="contatti"]
 
   .slideshow.previous, .slideshow.next, .slideshow-controls
     display: none
+
+.antiscroll-scrollbar
+  +box-shadow(none)
+  background: rgba(120, 99, 87, 0.5)
+
+.box-inner
+  padding-right: 20px
+
+b, strong
+  font-weight: bold
 
 .icon
   +sharp-shadow

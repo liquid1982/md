@@ -25,6 +25,6 @@ end
 configure :build do
   # set :http_prefix, "/preview/"
   activate :relative_assets
-  # activate :minify_css
-  # activate :minify_javascript
+  activate :minify_css
+  activate :minify_javascript
 end

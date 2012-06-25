@@ -25,7 +25,15 @@ $default-transition-duration : 0.5s
 
 @include global-reset
 
-@mixin unselectable
+=sharp-shadow
+  // +text-shadow(#000 1px 1px 1px)
+
+=title-1
+  font: 20px "TrajanProRegular"
+  color: $yellow
+  +sharp-shadow
+
+=unselectable
   -webkit-touch-callout: none
   -webkit-user-select: none
   -khtml-user-select: none
@@ -33,15 +41,7 @@ $default-transition-duration : 0.5s
   -ms-user-select: none
   user-select: none
 
-@mixin sharp-shadow
-  // +text-shadow(#000 1px 1px 1px)
-
-@mixin title-1
-  font: 20px "TrajanProRegular"
-  color: $yellow
-  +sharp-shadow
-
-@mixin circle($size)
+=circle($size)
   display: inline-block
   width: $size
   height: $size
@@ -64,27 +64,7 @@ $default-transition-duration : 0.5s
     line-height: $size
     font-style: normal
 
-.page
-  position: fixed
-  top: 3px
-  right: 3px
-  font-size: 11px
-  color: #CCC
-
-::selection
+::selection, ::-moz-selection
   background: $yellow
   color: $brown
   +text-shadow(none)
-
-::-moz-selection
-  background: $yellow
-  color: $brown
-  +text-shadow(none)
-
-@mixin unselectable
-  -webkit-touch-callout: none
-  -webkit-user-select: none
-  -khtml-user-select: none
-  -moz-user-select: none
-  -ms-user-select: none
-  user-select: none

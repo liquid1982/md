@@ -19,8 +19,7 @@ jQuery ->
 
     $.vegas 'slideshow', backgrounds: backgrounds, delay: 4000
 
-    if backgrounds.length > 0
-
+    if backgrounds.length > 1
       $(backgrounds).each (i, el) ->
         $('.slideshow-controls nav').append "<a class='icon' data-rel='#{i}'>#</a>"
 

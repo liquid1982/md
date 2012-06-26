@@ -84,8 +84,8 @@
     $booking_mail->Port = $config[ENV]['smtp_port'];
   }
 
+  $booking_mail->SetFrom($_REQUEST['email'], "{$_REQUEST['first_name']} {$_REQUEST['last_name']}");
   $booking_mail->AddAddress($config[ENV]['booking_email_address']);
-  $booking_mail->SetFrom("{$_REQUEST['first_name']} {$_REQUEST['last_name']}", $_REQUEST['email']);
   $booking_mail->IsHTML(true);
 
   $booking_mail->Subject = "<%= I18n.t('booking-form.mail.new-booking-subject') %>";
@@ -103,8 +103,8 @@ HTML;
     $thankyou_mail->Port = $config[ENV]['smtp_port'];
   }
 
+  $thankyou_mail->SetFrom($config[ENV]['booking_email_address'], "Mandadream");
   $thankyou_mail->AddAddress($_REQUEST['email']);
-  $thankyou_mail->SetFrom("Mandadream", $config[ENV]['booking_email_address']);
   $thankyou_mail->IsHTML(true);
 
   $thankyou_mail->Subject = "<%= I18n.t('booking-form.mail.thankyou-subject') %>";

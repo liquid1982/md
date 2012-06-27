@@ -33,7 +33,7 @@ en:
 
 
       The old town of Lamu, recognized by Unesco as a World Heritage Site, is a rare living fragment
-      of the Swahili culture, which once dominated the whole coast on the Indian Ocean With its
+      of the Swahili culture, which once dominated the whole coast on the Indian Ocean. With its
       winding streets, which allow passage only to people and donkeys, the typical wooden carvings
       and the characteristic architecture of its houses, it is absolutely charming.
 
@@ -182,9 +182,9 @@ en:
       email: Email
       phone: Phone
       arrival_date: Arrival date
-      nights: Nights
-      people: People
-      from_country: From country
+      nights: Number of nights
+      people: Number of guests
+      from_country: Country
       notes: Notes
       newsletter: Newsletter subscription
       submit: Submit
@@ -202,7 +202,7 @@ en:
       thankyou-subject: "[ Mandadream ] Booking confirmed"
 
       thankyou-top: >
-        <p>Kind {$_REQUEST['first_name']} {$_REQUEST['last_name']}, we would like to thank you
+        <p>Dear {$_REQUEST['first_name']} {$_REQUEST['last_name']}, we would like to thank you
         for your booking on Mandadream.</p>
         <p>These are the details you provided:</p>
 
@@ -213,10 +213,10 @@ en:
       <strong>Thank you</strong>
 
 
-      Your booking was succsessfully sent.
+      Your booking was successfully sent.
 
 
-      You will receive a reply as soon as possibie.
+      You will receive a reply as soon as possible.
 
     booking-warning: >
       <strong>Attention</strong>
@@ -234,14 +234,14 @@ en:
       s02: Fisherman on Manda beach
       s03:
       s04: People watching the dhow race regatta on January 1st
-      s05: Shela's roofs at sunset
+      s05: Shela’s roofs at sunset
       s06:
       s07: Kitesurfing in Lamu channel
       s08: African sunset on Shela beach
       s09: Shela Village
       s10: Dhows in Lamu Channel
       s11: View of Manda Island
-      s12: Equator's veranda
+      s12: Equator’s veranda
       s13: Details of Equator
       s14:
       s15: Blue Empire and Equator villas on Manda Beach
@@ -265,10 +265,10 @@ en:
       s33:
       s34:
       s35: Dhow race regatta
-      s36: Lamu Town's harbour
+      s36: Lamu Town’s harbour
       s37:
       s38: Guests relaxing on Manda Beach
-      s39: Details of Equator's veranda
+      s39: Details of Equator’s veranda
       s40:
       s41: Dhow trip in the mangrove channels
       s42: Dhow race ragatta

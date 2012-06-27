@@ -105,7 +105,7 @@ it:
       Il trasporto da/per l’aeroporto di Manda è incluso nel prezzo.
 
     contacts: >
-      Per maggiori informazioni inviaci una mail:
+      Per maggiori informazioni inviaci una email:
 
       <a href="mailto:mandadreamkenya@gmail.com">mandadreamkenya@gmail.com</a>
 
@@ -202,13 +202,13 @@ it:
         <p>I dettagli sono di seguito riportati:</p>
 
       new-booking-bottom: >
-        <p>Mail automatica generata da <a href="http://www.mandadream.it">Mandadream</a>.
+        <p>Email automatica generata da <a href="http://www.mandadream.it">Mandadream</a>.
 
       thankyou-subject: "[ Mandadream ] Prenotazione effettuata con successo"
 
       thankyou-top: >
         <p>Gentile {$_REQUEST['first_name']} {$_REQUEST['last_name']}, desideriamo ringraziarti per
-        avereffettuato una prenotazione su Mandadream.</p>
+        avere effettuato una prenotazione su Mandadream.</p>
         <p>Questi sono i dati da te inseriti:</p>
 
       thankyou-bottom: >
@@ -238,7 +238,7 @@ it:
       s01:
       s02: Pescatore sulla spiaggia di Manda
       s03:
-      s04: Spettatori assistono alla regata di dhow il primo giorno dell'anno
+      s04: Spettatori assistono alla regata di dhow il primo giorno dell’anno
       s05: I tetti di Shela al tramonto
       s06:
       s07: Kitesurf nel canale di Lamu

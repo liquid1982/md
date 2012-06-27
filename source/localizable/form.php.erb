@@ -18,8 +18,8 @@
     ),
     'development' => array(
       'booking_email_address' => 'vin.aci@gmail.com',
-      'use_smtp' => true,
-      'smtp_host' => 'smtp.cayenne.it',
+      'use_smtp' => false,
+      'smtp_host' => '',
       'smtp_port' => 25
     )
   );
@@ -71,7 +71,7 @@
   $provided_fields = array();
 
   foreach ($_REQUEST as $key => $value) {
-    if ($value) { array_push($provided_fields, "<li><b>{$labels[$key]}</b>: {$value}</li>"); }
+    if ($value && array_key_exists($key, $labels)) { array_push($provided_fields, "<li><b>{$labels[$key]}</b>: {$value}</li>"); }
   }
 
   $details = "<ul>" . join('', $provided_fields) . "</ul>";
